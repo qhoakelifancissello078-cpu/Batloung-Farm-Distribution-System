@@ -1,0 +1,716 @@
+
+.fruits-page {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    color: #26372d;
+    animation: fruitsFadeIn 0.35s ease;
+}
+
+@keyframes fruitsFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fruits-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.fruits-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #43845a;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.1px;
+    margin-bottom: 8px;
+}
+
+.fruits-heading h1 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 29px;
+    font-weight: 800;
+    margin: 0 0 6px;
+    color: #203b2c;
+}
+
+.fruits-heading p {
+    color: #778279;
+    font-size: 14px;
+    margin: 0;
+}
+
+.fruit-add-button,
+.fruit-save-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border: none;
+    border-radius: 10px;
+    background: #2f7549;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 13px 18px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fruit-add-button:hover,
+.fruit-save-button:hover {
+    background: #235d39;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(35, 93, 57, 0.18);
+}
+
+.fruit-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.fruit-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 21px;
+    background: #fff;
+    border: 1px solid #e9ede7;
+    border-radius: 15px;
+    box-shadow: 0 3px 12px rgba(31, 55, 39, 0.035);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fruit-stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 9px 22px rgba(31, 55, 39, 0.08);
+}
+
+.fruit-stat-icon {
+    width: 49px;
+    height: 49px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    flex-shrink: 0;
+}
+
+.fruit-stat-icon.total {
+    color: #39764d;
+    background: #e8f2e9;
+}
+
+.fruit-stat-icon.available {
+    color: #2e8050;
+    background: #e6f4e9;
+}
+
+.fruit-stat-icon.unavailable {
+    color: #bd7950;
+    background: #fff1e7;
+}
+
+.fruit-stat-card span,
+.fruit-stat-card small {
+    display: block;
+    color: #78847b;
+}
+
+.fruit-stat-card span {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.fruit-stat-card strong {
+    display: block;
+    color: #263b2e;
+    font-size: 27px;
+    line-height: 1.25;
+    font-weight: 800;
+}
+
+.fruit-stat-card small {
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.fruits-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.fruits-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    max-width: 490px;
+    height: 46px;
+    padding: 0 14px;
+    border: 1px solid #e2e8e1;
+    border-radius: 10px;
+    background: white;
+    color: #849087;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fruits-search:focus-within {
+    border-color: #6caa7b;
+    box-shadow: 0 0 0 3px rgba(76, 143, 91, 0.1);
+}
+
+.fruits-search input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #304438;
+    font-size: 13px;
+}
+
+.fruits-search input::placeholder {
+    color: #a0aaa2;
+}
+
+.fruits-toolbar select,
+.fruit-modal select,
+.fruit-modal input,
+.fruit-modal textarea {
+    border: 1px solid #e1e8e0;
+    border-radius: 9px;
+    background: #fff;
+    color: #35483a;
+    font: inherit;
+    outline: none;
+}
+
+.fruits-toolbar select {
+    height: 46px;
+    min-width: 145px;
+    padding: 0 12px;
+    font-size: 13px;
+}
+
+.fruits-toolbar select:focus,
+.fruit-modal select:focus,
+.fruit-modal input:focus,
+.fruit-modal textarea:focus {
+    border-color: #70a87b;
+    box-shadow: 0 0 0 3px rgba(76, 143, 91, 0.1);
+}
+
+.fruit-refresh-button {
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 15px;
+    border: 1px solid #e1e8e0;
+    border-radius: 10px;
+    background: white;
+    color: #4c6954;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, border 0.2s ease;
+}
+
+.fruit-refresh-button:hover {
+    background: #edf5ed;
+    border-color: #b9d2bc;
+}
+
+.fruit-refresh-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.fruits-table-card {
+    overflow: hidden;
+    background: white;
+    border: 1px solid #e8ede7;
+    border-radius: 15px;
+    box-shadow: 0 3px 12px rgba(31, 55, 39, 0.035);
+}
+
+.fruits-table-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 21px 23px;
+    border-bottom: 1px solid #edf0eb;
+}
+
+.fruits-table-heading h2 {
+    color: #2b4032;
+    font-family: 'Manrope', sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+    margin: 0 0 5px;
+}
+
+.fruits-table-heading p {
+    color: #879188;
+    font-size: 12px;
+    margin: 0;
+}
+
+.fruit-record-count {
+    color: #54745b;
+    background: #edf5ed;
+    border-radius: 20px;
+    padding: 7px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.fruits-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.fruits-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 790px;
+}
+
+.fruits-table th {
+    padding: 15px 20px;
+    color: #849087;
+    background: #fafbf8;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.fruits-table td {
+    padding: 16px 20px;
+    border-top: 1px solid #f0f2ee;
+    color: #647269;
+    font-size: 13px;
+}
+
+.fruits-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.fruits-table tbody tr:hover {
+    background: #fbfdf9;
+}
+
+.fruit-name-cell {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-width: 145px;
+}
+
+.fruit-row-icon {
+    width: 39px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #47845a;
+    background: #edf5eb;
+    border-radius: 11px;
+    flex-shrink: 0;
+}
+
+.fruit-name-cell strong,
+.fruit-name-cell small {
+    display: block;
+}
+
+.fruit-name-cell strong {
+    color: #344b3a;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.fruit-name-cell small {
+    color: #9aa49b;
+    font-size: 11px;
+    margin-top: 3px;
+}
+
+.fruit-description {
+    max-width: 260px;
+}
+
+.fruit-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.fruit-status > span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+}
+
+.fruit-status.available {
+    color: #32774a;
+    background: #eaf5eb;
+}
+
+.fruit-status.available > span {
+    background: #3d9a5c;
+}
+
+.fruit-status.unavailable {
+    color: #a96542;
+    background: #fff0e8;
+}
+
+.fruit-status.unavailable > span {
+    background: #d27b4e;
+}
+
+.fruit-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.fruit-actions button {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.fruit-actions button:hover {
+    transform: translateY(-2px);
+}
+
+.fruit-edit-action {
+    color: #477b55;
+    background: #edf5ed;
+}
+
+.fruit-edit-action:hover {
+    background: #dceedd;
+}
+
+.fruit-delete-action {
+    color: #b9654f;
+    background: #fff0eb;
+}
+
+.fruit-delete-action:hover {
+    background: #ffe0d6;
+}
+
+.fruit-actions button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.fruit-empty-state {
+    min-height: 210px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #8b998d;
+    text-align: center;
+    padding: 25px;
+}
+
+.fruit-empty-state p {
+    margin: 0;
+    color: #53675a;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.fruit-empty-state span {
+    font-size: 12px;
+}
+
+.fruit-empty-state button {
+    border: none;
+    border-radius: 8px;
+    padding: 9px 14px;
+    background: #eaf3e9;
+    color: #36744a;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.fruit-message {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.fruit-success {
+    color: #2e7547;
+    background: #eaf5eb;
+    border: 1px solid #d6ead8;
+}
+
+.fruit-error {
+    color: #a64d3c;
+    background: #fff0ec;
+    border: 1px solid #f3d9d1;
+}
+
+.fruit-message button {
+    display: flex;
+    margin-left: auto;
+    padding: 3px;
+    border: none;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+
+.fruit-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(17, 35, 24, 0.55);
+    backdrop-filter: blur(4px);
+    animation: fruitOverlayIn 0.2s ease;
+}
+
+@keyframes fruitOverlayIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fruit-modal {
+    width: 100%;
+    max-width: 510px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 27px;
+    background: #fff;
+    border-radius: 17px;
+    box-shadow: 0 20px 65px rgba(0, 0, 0, 0.2);
+    animation: fruitModalIn 0.25s ease;
+}
+
+@keyframes fruitModalIn {
+    from { opacity: 0; transform: translateY(12px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.fruit-modal-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 23px;
+}
+
+.fruit-modal-heading span {
+    color: #47845a;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.fruit-modal-heading h2 {
+    color: #263d2e;
+    font-family: 'Manrope', sans-serif;
+    font-size: 23px;
+    margin: 5px 0;
+}
+
+.fruit-modal-heading p {
+    color: #879188;
+    font-size: 12px;
+    margin: 0;
+}
+
+.fruit-modal-heading > button {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 9px;
+    background: #f1f4ef;
+    color: #617165;
+    cursor: pointer;
+}
+
+.fruit-modal form {
+    display: flex;
+    flex-direction: column;
+}
+
+.fruit-modal label {
+    margin: 13px 0 7px;
+    color: #405346;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.fruit-modal input,
+.fruit-modal textarea,
+.fruit-modal select {
+    width: 100%;
+    padding: 12px 13px;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+.fruit-modal textarea {
+    resize: vertical;
+    min-height: 85px;
+}
+
+.fruit-modal input::placeholder,
+.fruit-modal textarea::placeholder {
+    color: #a5aea6;
+}
+
+.fruit-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.fruit-cancel-button {
+    padding: 12px 17px;
+    border: 1px solid #e1e8e0;
+    border-radius: 9px;
+    background: #fff;
+    color: #647269;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.fruit-cancel-button:hover {
+    background: #f5f7f3;
+}
+
+.fruit-save-button:disabled,
+.fruit-cancel-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.fruit-spinning {
+    animation: fruitSpin 1s linear infinite;
+}
+
+@keyframes fruitSpin {
+    to { transform: rotate(360deg); }
+}
+
+@media (max-width: 900px) {
+    .fruit-stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .fruits-page {
+        gap: 18px;
+    }
+
+    .fruits-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .fruits-heading h1 {
+        font-size: 25px;
+    }
+
+    .fruit-add-button {
+        width: 100%;
+    }
+
+    .fruit-stat-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .fruit-stat-card {
+        padding: 16px;
+    }
+
+    .fruits-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .fruits-search {
+        max-width: none;
+        box-sizing: border-box;
+    }
+
+    .fruits-toolbar select,
+    .fruit-refresh-button {
+        width: 100%;
+    }
+
+    .fruits-table-heading {
+        padding: 17px;
+    }
+
+    .fruit-modal {
+        padding: 21px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fruits-page,
+    .fruit-modal,
+    .fruit-modal-overlay {
+        animation: none;
+    }
+
+    .fruit-spinning {
+        animation: none;
+    }
+
+    .fruit-stat-card,
+    .fruit-actions button,
+    .fruit-add-button {
+        transition: none;
+    }
+}
